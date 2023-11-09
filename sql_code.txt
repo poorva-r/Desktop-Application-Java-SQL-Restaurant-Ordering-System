@@ -1,0 +1,8 @@
+use pizza_paradise;
+
+create table customer(order_no int(10) not null primary key,name varchar(20),address varchar(40),contact int(20)); 
+
+create table payment(order_no int(10) unique references customer(order_no),amount int(20),order_type varchar(20),feedback varchar(10),suggestion varchar(100))engine-innodb;
+
+create table order_details(order_no int(10) unique references customer(order_no),pizza_amt int(20),drinks_amt int(20),snacks_amt int(20),dessert_amt int(20))engine=innodb;
+ 
